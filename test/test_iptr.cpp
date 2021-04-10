@@ -67,7 +67,7 @@ public:
 
     STDMETHODIMP_(ULONG) Release() noexcept override
     {
-        long rc = --m_rc;
+        auto rc = --m_rc;
         if(rc == 0) delete this;
         return rc;
     }
